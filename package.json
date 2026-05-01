@@ -1,0 +1,21 @@
+{
+  "name": "team-task-manager",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "install:all": "npm install",
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "build": "npm run build --workspace client",
+    "start": "npm start --workspace server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
